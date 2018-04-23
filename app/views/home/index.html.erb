@@ -11,6 +11,7 @@
          alt="Generic placeholder image" height="128" width="128px">
     <div class="media-body">
       <h5 class="mt-0 mb-1"><%= q.email %></h5>
+      <div><%= time_ago_in_words q.created_at %> ago</div>
       <%= q.body %>
     </div>
     <div>
