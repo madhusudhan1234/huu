@@ -1,0 +1,38 @@
+<div class="lead">
+  <ul class="list-unstyled">
+    <li class="media">
+      <img class="mr-3" src="<%= @question.gravatar %>"
+           alt="Generic placeholder image" height="128" width="128px">
+      <div class="media-body">
+        <h5 class="mt-0 mb-1"><%= @question.email %></h5>
+        <%= @question.body %>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<div class="row">
+  <div class="col-2"></div>
+  <div class="col-8">
+    <div>
+      <button class="btn btn-success btn-xs" data-toggle="modal" data-target="#newAnswerModal">Submit New Answer</button>
+    </div>
+    <%= render 'new_answer_form' %>
+    <% @answers.each do |answer| %>
+    <li class="media">
+      <img class="mr-3" src="<%= answer.gravatar %>"
+           alt="Generic placeholder image" height="128" width="128px">
+      <div class="media-body">
+        <h5 class="mt-0 mb-1"><%= answer.email %></h5>
+        <div><%= time_ago_in_words answer.created_at %> ago</div>
+        <%= answer.body %>
+      </div>
+    </li>
+    <% end %>
+    <% if @answers.empty? %>
+      <div class="alert alert-primary" role="alert">
+        No Answers Found Create One !
+      </div>
+    <% end %>
+  </div>
+</div>
