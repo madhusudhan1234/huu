@@ -4,14 +4,14 @@
   </div>
 </div>
 
-<ul class="list-unstyled">
+<ul class="list-unstyled boxes">
   <% @questions.each do |q| %>
   <li class="media">
     <img class="mr-3" src="<%= q.gravatar %>"
          alt="Generic placeholder image" height="128" width="128px">
     <div class="media-body">
       <h5 class="mt-0 mb-1"><%= q.email %></h5>
-      <div><%= time_ago_in_words q.created_at %> ago</div>
+      <div class="time"><%= time_ago_in_words q.created_at %> ago</div>
       <%= q.body %>
     </div>
     <div>
