@@ -7,6 +7,10 @@
     border: 1px solid #434343;
     position: relative;
     margin-top: 20px;
+    cursor: pointer;
+  }
+  .media:hover {
+    background-color: #ddd;
   }
   .time {
     position: absolute;

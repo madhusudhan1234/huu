@@ -6,7 +6,7 @@
 
 <ul class="list-unstyled boxes">
   <% @questions.each do |q| %>
-  <li class="media">
+  <li class="media" data-target="<%= question_path(q) %>">
     <img class="mr-3" src="<%= q.gravatar %>"
          alt="Generic placeholder image" height="128" width="128px">
     <div class="media-body">
